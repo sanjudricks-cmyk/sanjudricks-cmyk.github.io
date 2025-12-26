@@ -1,0 +1,185 @@
+/* --- RESET & GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a; /* Deep Black */
+    color: #ffffff;
+    overflow-x: hidden; /* Prevents side scrolling */
+}
+
+/* --- NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: rgba(10, 10, 10, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.dot {
+    color: #00e5ff; /* Light Blue Accent */
+    font-size: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e5ff; /* Light Blue on Hover */
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.hero-content {
+    z-index: 2; /* Ensures text is above the glow */
+}
+
+.greeting {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #00e5ff; /* Light Blue */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.name {
+    font-size: 85px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.name .highlight {
+    /* Outline Text Effect (Very modern) */
+    color: transparent;
+    -webkit-text-stroke: 2px #0051ff; /* Dark Blue Outline */
+}
+
+/* --- TYPING ANIMATION --- */
+.typing-container {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+.dynamic-text {
+    color: #00e5ff; /* Light Blue */
+    position: relative;
+}
+
+/* This creates the cursor and typing effect using pure CSS */
+.dynamic-text::after {
+    content: "Brand Identity";
+    animation: typing 4s steps(14) infinite;
+    overflow: hidden;
+    border-right: 3px solid #00e5ff;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 0;
+    position: absolute;
+    left: 0;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 100%; }
+    90% { width: 0; }
+    100% { width: 0; }
+}
+
+.description {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #888;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* --- BUTTONS --- */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #0044ff, #00e5ff); /* Dark to Light Blue Gradient */
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+}
+
+.btn-secondary {
+    border: 2px solid #333;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    border-color: #00e5ff;
+    color: #00e5ff;
+}
+
+/* --- GLOW BACKGROUND --- */
+.glow-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,68,255,0.15) 0%, rgba(0,0,0,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}

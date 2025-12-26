@@ -1,4 +1,4 @@
-/* --- RESET & GLOBAL STYLES --- */
+/* --- GLOBAL STYLES --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +8,9 @@
 }
 
 body {
-    background-color: #0a0a0a; /* Deep Black */
+    background-color: #0a0a0a;
     color: #ffffff;
-    overflow-x: hidden; /* Prevents side scrolling */
+    overflow-x: hidden;
 }
 
 /* --- NAVIGATION --- */
@@ -24,7 +24,7 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+    backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -34,16 +34,9 @@ nav {
     color: #fff;
 }
 
-.dot {
-    color: #00e5ff; /* Light Blue Accent */
-    font-size: 30px;
-}
+.dot { color: #00e5ff; font-size: 30px; }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
+.nav-links { list-style: none; display: flex; gap: 35px; }
 
 .nav-links a {
     text-decoration: none;
@@ -53,9 +46,7 @@ nav {
     transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: #00e5ff; /* Light Blue on Hover */
-}
+.nav-links a:hover { color: #00e5ff; }
 
 /* --- HERO SECTION --- */
 .hero {
@@ -68,14 +59,12 @@ nav {
     padding: 0 20px;
 }
 
-.hero-content {
-    z-index: 2; /* Ensures text is above the glow */
-}
+.hero-content { z-index: 2; }
 
 .greeting {
     font-size: 16px;
     letter-spacing: 3px;
-    color: #00e5ff; /* Light Blue */
+    color: #00e5ff;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -88,12 +77,11 @@ nav {
 }
 
 .name .highlight {
-    /* Outline Text Effect (Very modern) */
     color: transparent;
-    -webkit-text-stroke: 2px #0051ff; /* Dark Blue Outline */
+    -webkit-text-stroke: 2px #0051ff;
 }
 
-/* --- TYPING ANIMATION --- */
+/* Typing Animation */
 .typing-container {
     font-size: 40px;
     font-weight: 600;
@@ -101,12 +89,8 @@ nav {
     color: #e0e0e0;
 }
 
-.dynamic-text {
-    color: #00e5ff; /* Light Blue */
-    position: relative;
-}
+.dynamic-text { color: #00e5ff; position: relative; }
 
-/* This creates the cursor and typing effect using pure CSS */
 .dynamic-text::after {
     content: "Brand Identity";
     animation: typing 4s steps(14) infinite;
@@ -135,12 +119,8 @@ nav {
     font-size: 16px;
 }
 
-/* --- BUTTONS --- */
-.buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
+/* Buttons */
+.buttons { display: flex; gap: 20px; justify-content: center; }
 
 .btn {
     padding: 14px 35px;
@@ -151,7 +131,7 @@ nav {
 }
 
 .btn-primary {
-    background: linear-gradient(90deg, #0044ff, #00e5ff); /* Dark to Light Blue Gradient */
+    background: linear-gradient(90deg, #0044ff, #00e5ff);
     color: #fff;
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
 }
@@ -161,17 +141,10 @@ nav {
     box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
-.btn-secondary {
-    border: 2px solid #333;
-    color: #fff;
-}
+.btn-secondary { border: 2px solid #333; color: #fff; }
+.btn-secondary:hover { border-color: #00e5ff; color: #00e5ff; }
 
-.btn-secondary:hover {
-    border-color: #00e5ff;
-    color: #00e5ff;
-}
-
-/* --- GLOW BACKGROUND --- */
+/* Glow Background */
 .glow-circle {
     position: absolute;
     width: 600px;
@@ -183,3 +156,116 @@ nav {
     z-index: 1;
     pointer-events: none;
 }
+
+/* --- PART 2: WORK GALLERY --- */
+.section-padding { padding: 100px 8%; }
+
+.section-title {
+    font-size: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.blue-text { color: #00e5ff; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.image-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.project-card:hover .overlay { opacity: 1; }
+.project-card:hover img { transform: scale(1.1); }
+
+.overlay h3 { font-size: 22px; margin-bottom: 5px; }
+.overlay p { color: #aaa; font-size: 14px; }
+
+/* --- ABOUT SECTION --- */
+.about-section {
+    background: #0f0f0f;
+    text-align: center;
+}
+
+.about-content p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #b3b3b3;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.skills {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skills span {
+    background: #1a1a1a;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* --- FOOTER --- */
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+.footer h2 { font-size: 30px; margin-bottom: 10px; }
+.footer p { color: #888; margin-bottom: 30px; }
+
+.socials { margin-bottom: 30px; }
+
+.socials a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.socials a:hover { color: #00e5ff; }
+
+.copyright { font-size: 12px; color: #444; }
